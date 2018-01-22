@@ -1,0 +1,33 @@
+@model MusicHistory.Models.ViewModels.SongListViewModel
+
+@{
+    ViewData["Title"] = "Song Listing";
+}
+
+<h2 class="top-buffer">@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Release Date</th>
+            <th>Artist</th>
+        </tr>
+    </thead>
+
+@foreach (var song in Model.Songs)
+{
+    <tr>
+        <td>
+            <a asp-action="Detail" asp-route-id="@song.Id">
+                @Html.DisplayFor(modelItem => song.Title)
+            </a>
+        </td>
+        <td>@Html.DisplayFor(modelItem => song.Length)</td>
+        <td>@Html.DisplayFor(modelItem => song.Released)</td>
+        <td>@Html.DisplayFor(modelItem => song.Artist)</td>
+    </tr>
+}
+
+</table>

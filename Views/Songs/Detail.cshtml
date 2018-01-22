@@ -1,0 +1,28 @@
+@model MusicHistory.Models.ViewModels.SongInfo
+
+@{
+    ViewData["Title"] = "Song Details";
+}
+
+<h2 class="top-buffer">@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Release Date</th>
+            <th>Artist</th>
+        </tr>
+    </thead>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(song => song.Title)
+        </td>
+        <td>@Html.DisplayFor(song => song.Length)</td>
+        <td>@Html.DisplayFor(song => song.Released)</td>
+        <td>@Html.DisplayFor(song => song.Artist)</td>
+    </tr>
+
+</table>

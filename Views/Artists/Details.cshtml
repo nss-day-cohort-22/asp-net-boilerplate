@@ -1,0 +1,30 @@
+@model MusicHistory.Models.Artist
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Artist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ArtistName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.YearEstablished)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.YearEstablished)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ArtistId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
